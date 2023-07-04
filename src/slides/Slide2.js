@@ -72,12 +72,21 @@ const AtomFree = () => {
         }
 
         const shouldScatter = (p) => {
-            if (p.e !== 1) return false
-            const x = p.x - (dx_1+dx_2)/2
-            const y = p.y
-            const d = Math.sqrt(x*x+y*y)
+            // check intersection
+            const s_x = (dx_2-dx_1)/2
+            const s_y = 0
+            const a = (p.dx*dt)**2 + (p.dy*dt)**2
+            const b = 2*((p.dx*dt)*(p.x-s_x)+(p.dy*dt)*(p.y-s_y))
+            const c = s_x**2+s_y**2 + p.x**2+p.y**2 - 2*(s_x*p.x+s_y*p.y) - sigma**2
+            if (b**2-4*a*c > 0) {
+                const tmp = Math.sqrt(b**2-4*a*c)
+                const u1 = (-b + tmp) / (2*a)
+                const u2 = (-b - tmp) / (2*a)
 
-            return d <= simState.current.sigma
+                return (0 <= u1 && u1 <= 1) || (0 <= u2 && u2 <= 1)
+            }
+
+            return false
         }
 
         const interval = setInterval(() => {

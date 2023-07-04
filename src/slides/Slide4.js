@@ -73,7 +73,7 @@ const AtomFree = ({name, nSites}) => {
                 // check intersection
                 const a = (p.dx*dt)**2 + (p.dy*dt)**2
                 const b = 2*((p.dx*dt)*(p.x-s.x)+(p.dy*dt)*(p.y-s.y))
-                const c = s.x**2+s.y**2 + p.x**2+p.y**2 - 2*(s.x*p.x+s.y*p.y) - rSite
+                const c = s.x**2+s.y**2 + p.x**2+p.y**2 - 2*(s.x*p.x+s.y*p.y) - rSite**2
                 if (b**2-4*a*c > 0) {
                     const tmp = Math.sqrt(b**2-4*a*c)
                     const u1 = (-b + tmp) / (2*a)
@@ -221,7 +221,7 @@ const Sim = () => {
                 </div>
                 <div className="h-1/2 w-11/12">
                     <MathJax>{"Optically dense: \\(\\tau \\gg 1 \\)"}</MathJax>
-                    <AtomFree name="dense" nSites={200} />
+                    <AtomFree name="dense" nSites={100} />
                 </div>
             </div>
         </>
