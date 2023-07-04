@@ -225,10 +225,8 @@ const Finding = () => {
             </h1>
             <div className="flex-1 flex items-center justify-center text-6xl pb-60 flex-col">
                 <div className="mb-8">
-                    <MathJax>{"Change in intensity is proportional to absorption rate \\( \\alpha(s) \\) times intensity"}</MathJax>
-                </div>
-                <div className="mb-8">
-                    <MathJax>{"\\( \\frac{\\textup{d} I(s)}{\\textup{d} s} = - \\alpha(s) I \\)"}</MathJax>
+                    <MathJax>{"\\( \\frac{\\textup{d} I(s)}{\\textup{d} s} = - \\alpha(s) I(s) \\)"}</MathJax><br/>
+                    <MathJax>{"\\( \\alpha(s): \\) Absorption rate"}</MathJax>
                 </div>
             </div>
         </>
