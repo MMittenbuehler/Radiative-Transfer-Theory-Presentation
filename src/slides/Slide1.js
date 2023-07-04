@@ -169,8 +169,8 @@ const Simulation = () => {
                 <div className="mt-16 text-3xl">
                     <MathJax>{"\\( I =  \\frac{E}{\\textup{d}\\Omega \\, \\textup{d} A \\, \\textup{d}t} \\)"}</MathJax>
                     <br/>
-                    <MathJax>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
-                    <MathJax>{`\\(I_2 = ${round_n(int2, 4)}\\)`}</MathJax>
+                    <MathJax dynamic>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
+                    <MathJax dynamic>{`\\(I_2 = ${round_n(int2, 4)}\\)`}</MathJax>
                 </div>
             </div>
         </>

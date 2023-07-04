@@ -200,9 +200,9 @@ const AtomFree = () => {
                     <svg id="vis-1" className="w-full" viewBox="0 0 1600 500" />
                 </div>
                 <div className="text-3xl">
-                    <MathJax>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
-                    <MathJax>{`\\(I_2 = ${round_n(int2, 4)}\\)`}</MathJax>
-                    <MathJax>{`\\( I_2 - I_1 = ${round_n(int2-int1, 4)}\\)`}</MathJax>
+                    <MathJax dynamic>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
+                    <MathJax dynamic>{`\\(I_2 = ${round_n(int2, 4)}\\)`}</MathJax>
+                    <MathJax dynamic>{`\\( I_2 - I_1 = ${round_n(int2-int1, 4)}\\)`}</MathJax>
                     <Slider step={1} min={0} max={10} value={sigma} onChange={(e) => {
                         setSigma(e.target.value)
                         simState.current.sigma = e.target.value
