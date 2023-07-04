@@ -159,12 +159,14 @@ const Simulation = () => {
 
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Specific Intensity: Free Propagation
             </h1>
             <div className="flex-1 flex pb-32 flex-col justify-between">
-                <svg id="vis-1" className="mx-auto w-11/12 max-w-screen-2xl" viewBox="0 0 1600 500" />
-                <div className="mt-16 text-4xl">
+                <div className="w-1/2 mx-auto">
+                    <svg id="vis-1" className="w-full" viewBox="0 0 1600 500" />
+                </div>
+                <div className="mt-16 text-3xl">
                     <MathJax>{"\\( I =  \\frac{E}{\\textup{d}\\Omega \\, \\textup{d} A \\, \\textup{d}t} \\)"}</MathJax>
                     <br/>
                     <MathJax>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
@@ -178,10 +180,10 @@ const Simulation = () => {
 const SpecificIntensity = () => {
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Specific Intensity
             </h1>
-            <div className="flex-1 flex items-center justify-center text-6xl pb-60 flex-col">
+            <div className="flex-1 flex items-center justify-center text-3xl pb-60 flex-col">
                 <div className="mb-8">
                     <MathJax>{"\\(\\epsilon_\\nu \\, \\textup{d}\\nu = I_\\nu \\, \\cos \\theta \\, \\textup{d}\\Omega \\, \\textup{d} A \\, \\textup{d}t  \\, \\textup{d}\\nu \\)"}</MathJax>
                 </div>
@@ -198,10 +200,10 @@ const SpecificIntensity = () => {
 const Finding = () => {
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Specific Intensity: Free Propagation Finding
             </h1>
-            <div className="flex-1 flex items-center justify-center text-6xl pb-60 flex-col">
+            <div className="flex-1 flex items-center justify-center text-3xl pb-60 flex-col">
                 <div className="mb-8">
                     Specific intensity is conserved along a ray path
                 </div>

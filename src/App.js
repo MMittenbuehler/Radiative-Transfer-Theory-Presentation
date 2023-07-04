@@ -15,7 +15,7 @@ const Controller = ({onNext, onBack, slide, step}) => {
             <button onClick={onBack} className={(slide <= 0 && step <= 0) ? 'invisible' : ''}>
                 <ArrowLeftIcon className="h-8 w-8 hover:text-white text-gray-400 transition duration-300" />
             </button>
-            <span className={"text-white text-xl " + (slide > 0 ? '' : 'invisible')}>
+            <span className={"text-white text-md " + (slide > 0 ? '' : 'invisible')}>
                 <span>Radiative Transfer Theory, Marcel Mittenbühler, Slide {slide+1}.{step+1}</span>
             </span>
             <button onClick={onNext} className={(slide >= slides.length-1 && step >= slides[slides.length-1].steps-1) ? 'invisible' : ''}>

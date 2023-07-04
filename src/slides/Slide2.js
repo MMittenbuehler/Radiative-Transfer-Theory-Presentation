@@ -193,12 +193,14 @@ const AtomFree = () => {
 
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Absorption
             </h1>
             <div className="flex-1 flex flex-col justify-between pb-32">
-                <svg id="vis-1" className="mx-auto w-11/12 max-w-screen-2xl" viewBox="0 0 1600 500" />
-                <div className="text-4xl">
+                <div className="w-1/2 mx-auto">
+                    <svg id="vis-1" className="w-full" viewBox="0 0 1600 500" />
+                </div>
+                <div className="text-3xl">
                     <MathJax>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
                     <MathJax>{`\\(I_2 = ${round_n(int2, 4)}\\)`}</MathJax>
                     <MathJax>{`\\( \\frac{I_2}{I_1} = ${round_n(int2/int1, 4)}\\)`}</MathJax>
@@ -221,10 +223,10 @@ const AtomFree = () => {
 const Finding = () => {
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Absorption: Finding
             </h1>
-            <div className="flex-1 flex items-center justify-center text-6xl pb-60 flex-col">
+            <div className="flex-1 flex items-center justify-center text-3xl pb-32 flex-col">
                 <div className="mb-8">
                     <MathJax>{"\\( \\frac{\\textup{d} I(s)}{\\textup{d} s} = - \\alpha(s) I(s) \\)"}</MathJax><br/>
                     <MathJax>{"\\( \\alpha(s): \\) Absorption rate"}</MathJax>

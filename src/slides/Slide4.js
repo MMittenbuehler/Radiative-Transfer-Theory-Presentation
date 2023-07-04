@@ -184,17 +184,19 @@ const AtomFree = ({name, nSites}) => {
     }, [name, nSites])
 
     return (
-        <svg id={name} className="mx-auto w-11/12 max-w-screen-2xl" viewBox="0 0 1600 400" />
+        <div className="w-1/2 mx-auto">
+            <svg id={name} className="w-full" viewBox="0 0 1600 500" />
+        </div>
     )
 }
 
 const OpticalDepth = () => {
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Optical Depth
             </h1>
-            <div className="flex-1 flex items-center justify-center text-6xl pb-60 flex-col">
+            <div className="flex-1 flex items-center justify-center text-3xl pb-32 flex-col">
                 <div className="mb-8">
                     <MathJax>{"\\( \\textup{d}\\tau = \\alpha \\textup{d}s \\)"}</MathJax><br/>
                     <MathJax>{"\\( \\frac{\\textup{d}I(\\tau)}{\\textup{d}\\tau} = S(\\tau) -I(\\tau) \\)"}</MathJax><br/><br/>
@@ -209,10 +211,10 @@ const OpticalDepth = () => {
 const Sim = () => {
     return (
         <>
-            <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
+            <h1 className="text-left pt-4 pl-8 text-5xl pb-8">
                 Optical Depth: Example
             </h1>
-            <div className="flex-1 flex items-center justify-center text-5xl pb-10 flex-col">
+            <div className="flex-1 flex items-center justify-center text-3xl pb-10 flex-col">
                 <div className="mb-4 h-1/2 w-11/12">
                     <MathJax>{"Optically thin: \\( \\tau \\ll 1 \\)"}</MathJax>
                     <AtomFree name="thin" nSites={5} />
