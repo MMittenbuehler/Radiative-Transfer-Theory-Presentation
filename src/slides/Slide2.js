@@ -77,7 +77,7 @@ const AtomFree = () => {
             const s_y = 0
             const a = (p.dx*dt)**2 + (p.dy*dt)**2
             const b = 2*((p.dx*dt)*(p.x-s_x)+(p.dy*dt)*(p.y-s_y))
-            const c = s_x**2+s_y**2 + p.x**2+p.y**2 - 2*(s_x*p.x+s_y*p.y) - sigma**2
+            const c = s_x**2+s_y**2 + p.x**2+p.y**2 - 2*(s_x*p.x+s_y*p.y) - simState.current.sigma**2
             if (b**2-4*a*c > 0) {
                 const tmp = Math.sqrt(b**2-4*a*c)
                 const u1 = (-b + tmp) / (2*a)
