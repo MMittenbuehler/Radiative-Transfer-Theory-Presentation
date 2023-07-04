@@ -5,7 +5,7 @@ import {MathJax} from "better-react-mathjax";
 const dt = 100
 const particles_per_dt = 10
 const v = 1
-const dead_time = 3000
+const dead_time = 1000
 
 const Simulation = () => {
 
@@ -30,7 +30,7 @@ const Simulation = () => {
         canvas.current.append('circle')
             .attr('r', 80)
             .attr('cx', 100)
-            .attr('cy', 400)
+            .attr('cy', 250)
             .attr('fill', 'yellow');
 
         const dx_1 = 400
@@ -43,18 +43,18 @@ const Simulation = () => {
             .attr('height', l1)
             .attr('width', 15)
             .attr('x', 100+dx_1)
-            .attr('y', 400-l1/2)
+            .attr('y', 250-l1/2)
             .attr('fill', 'white')
 
         canvas.current.append('rect')
             .attr('height', l2)
             .attr('width', 15)
             .attr('x', 100+dx_2)
-            .attr('y', 400-l2/2)
+            .attr('y', 250-l2/2)
             .attr('fill', 'white')
 
         const particles = canvas.current.append('g')
-            .attr("transform", "translate(100, 400)")
+            .attr("transform", "translate(100, 250)")
 
         const didIntersect = (x, dx, y, dy, det_x, det_l, t) => {
             if (t < dead_time) return false // let it reach steady state...
@@ -162,9 +162,9 @@ const Simulation = () => {
             <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
                 Specific Intensity: Free Propagation
             </h1>
-            <div className="flex-1">
-                <svg id="vis-1" className="h-3/5 w-11/12 mx-auto" />
-                <div className="mt-12 text-4xl">
+            <div className="flex-1 flex pb-32 flex-col justify-between">
+                <svg id="vis-1" className="mx-auto w-11/12 max-w-screen-2xl" viewBox="0 0 1600 500" />
+                <div className="mt-16 text-4xl">
                     <MathJax>{"\\( I =  \\frac{E}{\\textup{d}\\Omega \\, \\textup{d} A \\, \\textup{d}t} \\)"}</MathJax>
                     <br/>
                     <MathJax>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>

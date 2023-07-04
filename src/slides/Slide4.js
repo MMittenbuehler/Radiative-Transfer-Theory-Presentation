@@ -184,7 +184,7 @@ const AtomFree = ({name, nSites}) => {
     }, [name, nSites])
 
     return (
-        <svg id={name} className="mt-4 h-4/5 w-11/12 mx-auto" />
+        <svg id={name} className="mx-auto w-11/12 max-w-screen-2xl" viewBox="0 0 1600 400" />
     )
 }
 
@@ -206,16 +206,6 @@ const OpticalDepth = () => {
     )
 }
 
-const Fin = () => {
-    return (
-        <>
-            <div className="flex-1 flex items-center justify-center text-6xl pb-60 flex-col">
-                <MathJax>{"\\( \\frac{\\textup{d}I(\\tau)}{\\textup{d}\\tau} = S(\\tau) -I(\\tau) \\)"}</MathJax>
-            </div>
-        </>
-    )
-}
-
 const Sim = () => {
     return (
         <>
@@ -224,11 +214,11 @@ const Sim = () => {
             </h1>
             <div className="flex-1 flex items-center justify-center text-5xl pb-10 flex-col">
                 <div className="mb-4 h-1/2 w-11/12">
-                    <MathJax>{"\\( \\tau << 1 \\)"}</MathJax>
+                    <MathJax>{"Optically thin: \\( \\tau \\ll 1 \\)"}</MathJax>
                     <AtomFree name="thin" nSites={5} />
                 </div>
                 <div className="h-1/2 w-11/12">
-                    <MathJax>{"\\(\\tau >> 1 \\)"}</MathJax>
+                    <MathJax>{"Optically dense: \\(\\tau \\gg 1 \\)"}</MathJax>
                     <AtomFree name="dense" nSites={200} />
                 </div>
             </div>
@@ -247,13 +237,10 @@ const Slide = ({step}) => {
             {
                 step === 1 && <Sim />
             }
-            {
-                step === 2 && <Fin />
-            }
         </div>
     );
 }
 
-Slide.steps = 3;
+Slide.steps = 2;
 
 export default Slide;

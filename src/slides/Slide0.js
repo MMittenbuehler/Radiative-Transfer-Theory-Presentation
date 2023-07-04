@@ -4,7 +4,7 @@ const Slide = () => {
             <h1 className="text-center text-7xl">
                 Radiative Transfer Theory
             </h1>
-            <h2 className="text-center text-3xl">
+            <h2 className="text-center text-3xl mt-4">
                 by Marcel Mittenbühler
             </h2>
         </div>

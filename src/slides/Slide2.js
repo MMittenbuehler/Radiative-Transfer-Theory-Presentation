@@ -39,7 +39,7 @@ const AtomFree = () => {
 
         canvas.current.append('circle')
             .attr('cx', 100+(dx_1+dx_2)/2)
-            .attr('cy', 400)
+            .attr('cy', 250)
             .attr('r', simState.current.sigma)
             .attr('fill', 'yellow')
             .attr('class', 'sigma')
@@ -48,18 +48,18 @@ const AtomFree = () => {
             .attr('height', l1)
             .attr('width', 15)
             .attr('x', 100+dx_1)
-            .attr('y', 400-l1/2)
+            .attr('y', 250-l1/2)
             .attr('fill', 'white')
 
         canvas.current.append('rect')
             .attr('height', l2)
             .attr('width', 15)
             .attr('x', 100+dx_2)
-            .attr('y', 400-l2/2)
+            .attr('y', 250-l2/2)
             .attr('fill', 'white')
 
         const particles = canvas.current.append('g')
-            .attr("transform", "translate(100, 400)")
+            .attr("transform", "translate(100, 250)")
 
         const didIntersect = (x, dx, y, dy, det_x, det_l, t) => {
             if (t < dead_time) return false // let it reach steady state...
@@ -88,10 +88,11 @@ const AtomFree = () => {
                 .filter(p => p.active === 1)
                 .map(p => {
                     if (shouldScatter(p)) {
-                        const theta = 2*Math.random()*Math.PI
-                        p.dx = v*Math.cos(theta)
-                        p.dy = v*Math.sin(theta)
-                        p.e = 0
+                        // const theta = 2*Math.random()*Math.PI
+                        // p.dx = v*Math.cos(theta)
+                        // p.dy = v*Math.sin(theta)
+                        // p.e = 0
+                        p.active = 0
                     }
 
                     // Crosses detector1?
@@ -164,7 +165,7 @@ const AtomFree = () => {
                 .ease(d3.easeLinear)
                 .attr('cx', d => d.x)
                 .attr('cy', d => d.y)
-                .attr('r', 5)
+                .attr('r', d => d.active === 0 ? 0 : 5)
                 .attr('fill', d => d.e === 1 ? 'white' : 'red')
 
             p.exit()
@@ -195,9 +196,9 @@ const AtomFree = () => {
             <h1 className="text-left pt-4 pl-8 text-7xl pb-8">
                 Absorption
             </h1>
-            <div className="flex-1">
-                <svg id="vis-1" className="h-3/5 w-11/12 mx-auto" />
-                <div className="mt-12 text-4xl">
+            <div className="flex-1 flex flex-col justify-between pb-32">
+                <svg id="vis-1" className="mx-auto w-11/12 max-w-screen-2xl" viewBox="0 0 1600 500" />
+                <div className="text-4xl">
                     <MathJax>{`\\(I_1 = ${round_n(int1, 4)}\\)`}</MathJax>
                     <MathJax>{`\\(I_2 = ${round_n(int2, 4)}\\)`}</MathJax>
                     <MathJax>{`\\( \\frac{I_2}{I_1} = ${round_n(int2/int1, 4)}\\)`}</MathJax>
@@ -205,7 +206,7 @@ const AtomFree = () => {
                         setSigma(e.target.value)
                         simState.current.sigma = e.target.value
                         reset()
-                    }} name={`Sigma = ${sigma}`} />
+                    }} name={`Absorption cross section = ${sigma}`} />
                     <Slider step={1} min={0} max={10} value={particles_per_dt} onChange={(e) => {
                         setParticles_per_dt(e.target.value)
                         simState.current.particles_per_dt = e.target.value
