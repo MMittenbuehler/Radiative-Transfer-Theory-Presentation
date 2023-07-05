@@ -238,7 +238,7 @@ const Finding = () => {
             <div className="flex-1 flex items-center justify-center text-3xl pb-32 flex-col">
                 <div className="mb-8">
                     <MathJax>{"\\( \\frac{\\textup{d} I(s)}{\\textup{d} s} = - \\alpha(s) I(s) \\)"}</MathJax><br/>
-                    <MathJax>{"\\( \\alpha(s): \\) Absorption rate"}</MathJax>
+                    <MathJax>{"\\( \\alpha(s): \\) Absorption coefficient"}</MathJax>
                 </div>
             </div>
         </>

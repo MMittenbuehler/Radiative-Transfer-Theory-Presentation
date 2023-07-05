@@ -228,6 +228,7 @@ const Finding = () => {
             <div className="flex-1 flex items-center justify-center text-3xl pb-32 flex-col">
                 <div className="mb-8">
                     <MathJax>{"\\( \\frac{\\textup{d}I(s)}{\\textup{d}s} = j(s) \\)"}</MathJax>
+                    <MathJax>{"\\( j(s): \\) Emission coefficient "}</MathJax>
                 </div>
             </div>
         </>
